@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#274638" />
+    <meta name="description" content="Feinkost Cayan in Düsseldorf-Oberkassel: frisches Obst und Gemüse, Halal-Fleisch, türkische Feinkost und DHL Paketshop. Mo–Sa 08:00–20:00 Uhr." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Feinkost Cayan | Frische & Feinkost in Oberkassel" />
+    <meta property="og:description" content="Türkische Lebensmittel, frische Produkte und persönliche Nachbarschaft in Düsseldorf-Oberkassel." />
+    <title>Feinkost Cayan | Türkischer Lebensmittelmarkt in Düsseldorf-Oberkassel</title>
+    <link rel="stylesheet" href="/fonts/fonts.css" />
+    <style>
+      :root {
+        color-scheme: light;
+        --paper: #fbfaf6;
+        --white: #fff;
+        --ink: #262c27;
+        --muted: #696f68;
+        --green: #315c45;
+        --green-dark: #203e30;
+        --cayan-green: #00b42a;
+        --green-pale: #e9eee8;
+        --line: #dedfd7;
+        --serif: "Playfair Display", Georgia, serif;
+        --sans: "DM Sans", "Helvetica Neue", sans-serif;
+        --page-width: 1200px;
+      }
+
+      *, *::before, *::after { box-sizing: border-box; }
+      html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: var(--sans);
+        font-size: 16px;
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+      }
+      img, svg { display: block; }
+      img { max-width: 100%; }
+      a { color: inherit; text-decoration: none; }
+      a:focus-visible, button:focus-visible { outline: 3px solid var(--green); outline-offset: 4px; }
+      button { color: inherit; font: inherit; }
+      .wrap { width: min(var(--page-width), calc(100% - 64px)); margin-inline: auto; }
+      h1, h2, h3, p { margin-top: 0; }
+      h1, h2, h3 { font-family: var(--serif); font-weight: 600; }
+      h1 { max-width: 620px; margin-bottom: 22px; color: var(--green-dark); font-size: clamp(52px, 6vw, 78px); line-height: 1.04; }
+      h2 { margin-bottom: 16px; color: var(--green-dark); font-size: clamp(36px, 4vw, 48px); line-height: 1.12; }
+      .eyebrow {
+        display: flex; align-items: center; gap: 11px; margin: 0 0 18px;
+        color: var(--green); font-size: 11px; font-weight: 700;
+        letter-spacing: .14em; line-height: 1.4; text-transform: uppercase;
+      }
+      .eyebrow::before { width: 24px; height: 1px; background: currentColor; content: ""; }
+      .section-intro { max-width: 630px; margin-bottom: 0; color: var(--muted); font-size: 17px; line-height: 1.8; }
+
+      .site-header {
+        position: sticky; z-index: 20; top: 0; border-bottom: 1px solid transparent;
+        background: rgb(251 250 246 / 88%); transition: background-color 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+        -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+      }
+      .site-header.is-scrolled { border-color: var(--line); background: rgb(251 250 246 / 97%); box-shadow: 0 5px 20px rgb(32 62 48 / 6%); }
+      .header-inner { display: flex; min-height: 78px; align-items: center; justify-content: space-between; gap: 28px; }
+      .brand { display: inline-flex; min-width: max-content; align-items: center; gap: 11px; color: var(--green-dark); }
+      .brand-mark { display: block; width: 59px; height: 44px; flex: 0 0 auto; object-fit: contain; }
+      .brand-name { display: block; font-family: var(--serif); font-size: 23px; font-weight: 700; line-height: 1.02; }
+      .brand-word { color: var(--cayan-green); font-family: "Roboto Slab", Rockwell, Georgia, serif; font-size: 24px; font-weight: 800; letter-spacing: .015em; line-height: 1; white-space: nowrap; }
+      .main-nav { display: flex; align-items: center; gap: 30px; }
+      .main-nav a:not(.nav-visit) { color: #4d564e; font-size: 13px; font-weight: 600; transition: color 160ms ease; }
+      .main-nav a:not(.nav-visit):hover { color: var(--green); }
+      .nav-visit, .button {
+        display: inline-flex; min-height: 48px; align-items: center; justify-content: center; gap: 10px;
+        border: 1px solid var(--green); border-radius: 3px; background: var(--green); color: var(--white);
+        font-size: 13px; font-weight: 700; transition: background-color 180ms ease, border-color 180ms ease, transform 180ms ease;
+      }
+      .nav-visit { min-height: 42px; padding: 0 16px; }
+      .button { padding: 0 21px; }
+      .nav-visit:hover, .button:hover { transform: translateY(-2px); border-color: var(--green-dark); background: var(--green-dark); }
+      .nav-visit svg, .button svg { width: 17px; height: 17px; }
+      .menu-toggle {
+        display: none; width: 44px; height: 44px; align-items: center; justify-content: center;
+        border: 1px solid var(--line); border-radius: 3px; background: transparent; color: var(--green-dark); cursor: pointer;
+      }
+      .menu-toggle svg { width: 21px; height: 21px; }
+
+      .hero { display: grid; min-height: 600px; grid-template-columns: .92fr 1.08fr; align-items: center; gap: 54px; padding-block: 50px 66px; }
+      .hero-copy { padding-block: 24px; }
+      .hero .eyebrow { margin-bottom: 22px; }
+      .hero h1 span { color: var(--cayan-green); }
+      .hero-copy > p:not(.eyebrow) { max-width: 465px; margin-bottom: 29px; color: var(--muted); font-size: 17px; line-height: 1.8; }
+      .hero-actions { display: flex; align-items: center; gap: 22px; }
+      .text-link { display: inline-flex; align-items: center; gap: 9px; color: var(--green); font-size: 13px; font-weight: 700; }
+      .text-link svg { width: 16px; height: 16px; transition: transform 180ms ease; }
+      .text-link:hover svg { transform: translateX(4px); }
+      .hero-photo { position: relative; height: 500px; margin: 0; overflow: hidden; background: var(--green-pale); }
+      .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+      .photo-caption {
+        position: absolute; right: 0; bottom: 0; left: 0; display: flex; align-items: center; justify-content: space-between;
+        gap: 16px; padding: 14px 19px; background: rgb(28 42 32 / 76%); color: #fff;
+        font-size: 11px; letter-spacing: .1em; text-transform: uppercase;
+      }
+      .photo-caption span:last-child { color: #f0c49f; }
+      .qualities { border-block: 1px solid var(--line); background: #f2f2eb; }
+      .qualities-inner { display: grid; grid-template-columns: repeat(4, 1fr); }
+      .quality { display: flex; min-height: 94px; align-items: center; gap: 13px; padding: 18px 22px; color: var(--green-dark); font-size: 13px; font-weight: 600; }
+      .quality + .quality { border-left: 1px solid var(--line); }
+      .quality svg { width: 23px; height: 23px; flex: 0 0 auto; color: var(--green); }
+
+      .intro-band { border-bottom: 1px solid var(--line); background: var(--green-pale); }
+      .intro-inner { display: grid; grid-template-columns: 1.05fr 1fr; align-items: center; gap: 72px; padding-block: 82px; }
+      .intro-inner h2 { max-width: 520px; margin-bottom: 0; }
+      .intro-copy p { max-width: 540px; margin-bottom: 22px; color: #566258; line-height: 1.85; }
+      .specialties { display: flex; flex-wrap: wrap; gap: 8px; }
+      .specialties span { padding: 8px 12px; border: 1px solid #cad4c9; border-radius: 2px; color: var(--green-dark); font-size: 12px; font-weight: 600; }
+
+      .assortment { padding-block: 98px 106px; }
+      .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 40px; margin-bottom: 36px; }
+      .section-heading h2 { max-width: 620px; margin-bottom: 0; }
+      .section-heading .section-intro { max-width: 380px; font-size: 15px; }
+      .product-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+      .product-card { position: relative; min-width: 0; aspect-ratio: 1.2; margin: 0; overflow: hidden; background: var(--green-pale); }
+      .product-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 500ms ease; }
+      .product-card:hover img { transform: scale(1.035); }
+      .product-card figcaption {
+        position: absolute; right: 0; bottom: 0; left: 0; padding: 14px 17px;
+        background: rgb(28 42 32 / 76%); color: #fff; font-size: 13px; font-weight: 600;
+        letter-spacing: .025em; line-height: 1.45;
+      }
+
+      .service-band { padding-block: 0 96px; }
+      .service-panel { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 38px; padding: 38px 44px; background: var(--green-dark); color: #fff; }
+      .service-panel .eyebrow { color: #efb080; }
+      .service-panel h2 { margin-bottom: 10px; color: #fff; font-size: 34px; }
+      .service-panel p:not(.eyebrow) { max-width: 600px; margin-bottom: 0; color: #d9e1da; font-size: 14px; }
+      .service-icon { display: grid; width: 72px; height: 72px; place-items: center; border: 1px solid rgb(255 255 255 / 35%); border-radius: 50%; color: #efb080; }
+      .service-icon svg { width: 36px; height: 36px; }
+
+      .visit-section { padding-block: 88px 96px; border-block: 1px solid var(--line); background: #f3f1eb; }
+      .visit-layout { display: grid; grid-template-columns: 1fr .9fr; align-items: center; gap: 76px; }
+      .visit-intro { max-width: 420px; }
+      .visit-details { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 34px; }
+      .detail-block h3 { margin-bottom: 12px; color: var(--green-dark); font-family: var(--sans); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+      .hours-table { width: 100%; border-collapse: collapse; color: #434c44; font-size: 13px; }
+      .hours-table th, .hours-table td { padding: 7px 0; border-bottom: 1px solid var(--line); text-align: left; }
+      .hours-table th { font-weight: 600; }
+      .hours-table td { text-align: right; white-space: nowrap; }
+      .hours-table .closed { color: var(--muted); }
+      .detail-note { margin: 10px 0 0; color: var(--muted); font-size: 12px; }
+      .address-link { display: inline-block; color: var(--ink); font-size: 15px; font-weight: 600; line-height: 1.65; }
+      .phone-links { display: grid; gap: 3px; margin-top: 11px; }
+      .phone-links span { color: var(--muted); font-size: 11px; }
+      .phone-links a { width: fit-content; color: var(--muted); font-size: 11px; }
+      .phone-links a:hover { color: var(--green); }
+      .map-card {
+        position: relative; display: flex; aspect-ratio: 1.61; align-items: flex-end;
+        overflow: hidden; background: #e7eadf;
+      }
+      .map-card > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+      .map-info { position: relative; z-index: 1; width: 100%; padding: 17px 20px; background: rgb(28 42 32 / 82%); color: #fff; }
+      .map-info strong { display: block; margin-bottom: 2px; color: #fff; font-family: var(--serif); font-size: 21px; }
+      .map-info p { margin-bottom: 9px; color: #e2e9e2; font-size: 13px; }
+      .map-link {
+        display: inline-flex; min-height: 38px; align-items: center; gap: 8px; padding: 0 12px;
+        border: 1px solid rgb(255 255 255 / 75%); border-radius: 3px;
+        background: #fff; color: var(--green-dark); font-size: 12px; font-weight: 700;
+        transition: background-color 160ms ease, color 160ms ease;
+      }
+      .map-link svg { width: 15px; height: 15px; }
+      .map-link:hover { background: var(--green-pale); color: var(--green-dark); }
+
+      .contact-band { background: #e8eee7; }
+      .contact-inner { display: flex; align-items: center; justify-content: space-between; gap: 35px; padding-block: 45px; }
+      .contact-inner .eyebrow { margin-bottom: 8px; }
+      .contact-inner h2 { margin-bottom: 0; font-size: 34px; }
+      .contact-visit { display: grid; justify-items: end; gap: 8px; }
+      .contact-visit p { margin: 0; color: var(--muted); font-size: 13px; }
+      .site-footer { background: #1c3529; color: #e5ebe5; }
+      .footer-inner { display: flex; min-height: 76px; align-items: center; justify-content: space-between; gap: 20px; }
+      .footer-inner p { margin: 0; color: #c4d0c6; font-size: 11px; }
+      .footer-links { display: flex; gap: 20px; }
+      .footer-links a { color: #e5ebe5; font-size: 11px; }
+      .footer-links a:hover { color: #efb080; }
+
+      .js .reveal { opacity: 0; transform: translateY(15px); transition: opacity 600ms ease, transform 600ms ease; }
+      .js .reveal.is-visible { opacity: 1; transform: translateY(0); }
+      @media (max-width: 960px) {
+        .main-nav { gap: 19px; }
+        .hero { min-height: 0; grid-template-columns: .92fr 1.08fr; gap: 32px; padding-block: 42px 52px; }
+        .hero-photo { height: 440px; }
+        .quality { padding-inline: 14px; }
+        .intro-inner { gap: 42px; }
+        .visit-layout { gap: 42px; }
+        .visit-details { gap: 20px; }
+      }
+      @media (max-width: 720px) {
+        .wrap { width: min(var(--page-width), calc(100% - 40px)); }
+        .header-inner { min-height: 70px; }
+        .menu-toggle { display: inline-flex; }
+        .main-nav {
+          position: absolute; top: 100%; right: 0; left: 0; display: none; align-items: stretch; flex-direction: column;
+          gap: 0; padding: 10px 20px 20px; border-bottom: 1px solid var(--line); background: var(--paper); box-shadow: 0 12px 20px rgb(32 62 48 / 7%);
+        }
+        .main-nav.is-open { display: flex; }
+        .main-nav a:not(.nav-visit) { padding: 12px 0; border-bottom: 1px solid var(--line); }
+        .main-nav .nav-visit { margin-top: 14px; }
+        .hero { grid-template-columns: 1fr; gap: 24px; padding-block: 35px 42px; }
+        .hero-copy { padding-block: 12px; }
+        .hero-photo { height: min(112vw, 470px); }
+        .hero h1 { font-size: clamp(48px, 11vw, 68px); }
+        .qualities-inner { grid-template-columns: 1fr 1fr; }
+        .quality { min-height: 76px; padding: 12px 8px; font-size: 12px; }
+        .quality + .quality { border-left: 0; }
+        .quality:nth-child(even) { border-left: 1px solid var(--line); }
+        .quality:nth-child(n+3) { border-top: 1px solid var(--line); }
+        .intro-inner { grid-template-columns: 1fr; gap: 24px; padding-block: 62px; }
+        .assortment { padding-block: 68px 74px; }
+        .section-heading { display: block; margin-bottom: 24px; }
+        .section-heading .section-intro { margin-top: 13px; }
+        .product-grid { grid-template-columns: 1fr; gap: 14px; }
+        .product-card { aspect-ratio: 1.2; }
+        .service-band { padding-bottom: 68px; }
+        .service-panel { grid-template-columns: 1fr auto; gap: 16px; padding: 28px 24px; }
+        .service-panel h2 { font-size: 29px; }
+        .service-icon { width: 58px; height: 58px; }
+        .visit-section { padding-block: 66px 72px; }
+        .visit-layout { grid-template-columns: 1fr; gap: 32px; }
+        .visit-details { gap: 22px; margin-top: 28px; }
+        .map-card { min-height: 0; }
+        .contact-inner { align-items: flex-start; flex-direction: column; gap: 14px; padding-block: 34px; }
+        .contact-inner h2 { font-size: 30px; }
+        .contact-visit { justify-items: start; }
+        .footer-inner { align-items: flex-start; flex-direction: column; justify-content: center; gap: 8px; padding-block: 18px; }
+      }
+      @media (max-width: 430px) {
+        .wrap { width: calc(100% - 32px); }
+        .header-inner { gap: 10px; }
+        .brand { gap: 8px; }
+        .brand-mark { width: 48px; height: 36px; }
+        .brand-word { font-size: clamp(16px, 5.4vw, 22px); }
+        .hero h1 { font-size: clamp(40px, 12vw, 48px); }
+        .hero-actions { align-items: flex-start; flex-direction: column; gap: 15px; }
+        .visit-details { grid-template-columns: 1fr; }
+        .hours-table { max-width: 320px; }
+        .product-card { aspect-ratio: 1.15; }
+        .service-panel { grid-template-columns: 1fr; }
+        .service-icon { display: none; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+      }
+    </style>
+    <script>document.documentElement.classList.add("js");</script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "GroceryStore",
+        "name": "Feinkost Cayan",
+        "description": "Türkischer Lebensmittel- und Feinkostmarkt in Düsseldorf-Oberkassel mit frischen Lebensmitteln und Halal-Fleisch.",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Belsenstraße 16",
+          "postalCode": "40545",
+          "addressLocality": "Düsseldorf",
+          "addressCountry": "DE"
+        },
+        "telephone": ["+49 211 41661520", "+49 211 574460"],
+        "openingHours": "Mo-Sa 08:00-20:00"
+      }
+    </script>
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <div class="header-inner wrap">
+        <a class="brand" href="#top" aria-label="Feinkost Cayan, Startseite">
+          <img class="brand-mark" src="images/cayan-logo.jpg" alt="" />
+          <span class="brand-name"><span class="brand-word">FEINKOST CAYAN</span></span>
+        </a>
+        <button class="menu-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="main-nav">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
+        </button>
+        <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation">
+          <a href="#sortiment">Sortiment</a>
+          <a href="#dhl">DHL Paketshop</a>
+          <a href="#besuch">Öffnungszeiten &amp; Anfahrt</a>
+          <a class="nav-visit" href="#besuch">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            Vorbeikommen
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero wrap" aria-labelledby="hero-title">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Türkischer Lebensmittelmarkt · Düsseldorf-Oberkassel</p>
+          <h1 id="hero-title">Original türkische<br /><span>Spezialitäten.</span></h1>
+          <p>Entdecken Sie Baklava, frisch zubereitete Dips und Feinkost, dazu Halal-Fleisch sowie saisonales Obst und Gemüse – mitten in Oberkassel.</p>
+          <div class="hero-actions">
+            <a class="button" href="#besuch">Besuch planen</a>
+          </div>
+        </div>
+        <figure class="hero-photo reveal">
+          <img src="images/baklava.jpg" alt="Baklava aus der Feinkostauswahl bei Cayan" fetchpriority="high" />
+          <figcaption class="photo-caption"><span>Türkische Spezialitäten</span><span>Oberkassel</span></figcaption>
+        </figure>
+      </section>
+
+      <section class="qualities" aria-label="Das erwartet Sie bei Feinkost Cayan">
+        <div class="qualities-inner wrap">
+          <div class="quality"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-4.4 7-11a4 4 0 0 0-7-2.6A4 4 0 0 0 5 10c0 6.6 7 11 7 11Z"/><path d="M9 12h6m-3-3v6"/></svg>Frisches Obst &amp; Gemüse</div>
+          <div class="quality"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s8-4 8-11V5l-8-3-8 3v5c0 7 8 11 8 11Z"/><path d="m9 12 2 2 4-4"/></svg>Halal-Fleisch &amp; Metzgerei</div>
+          <div class="quality"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18m0-18c-4 0-6 2.4-6 5.2 0 2.5 2 4.3 6 4.3m0-9.5c4 0 6 2.4 6 5.2 0 2.5-2 4.3-6 4.3"/><path d="M5 21h14"/></svg>Täglich frische Feinkost</div>
+          <div class="quality"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h11v11H3z"/><path d="M14 11h4l3 3v4h-7"/><circle cx="7.5" cy="19" r="2"/><circle cx="17.5" cy="19" r="2"/></svg>DHL Paketshop vor Ort</div>
+        </div>
+      </section>
+
+      <section class="intro-band" aria-labelledby="intro-title">
+        <div class="intro-inner wrap reveal">
+          <div><p class="eyebrow">Willkommen bei Cayan</p><h2 id="intro-title">Türkischer Genuss, mitten in Oberkassel.</h2></div>
+          <div class="intro-copy">
+            <p>Von frisch zubereitetem Frischkäse, würzigen Dips und Antipasti bis zu Baklava sowie Schafs- und Ziegenkäse: Bei Cayan finden Sie türkische Spezialitäten für den gedeckten Tisch und den Alltag.</p>
+            <div class="specialties" aria-label="Spezialitäten"><span>Frischkäse</span><span>Antipasti &amp; Dips</span><span>Schafs- &amp; Ziegenkäse</span><span>Backwaren</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="assortment wrap" id="sortiment" aria-labelledby="assortment-title">
+        <div class="section-heading reveal">
+          <div><p class="eyebrow">Einblicke bei Cayan</p><h2 id="assortment-title">Türkische Spezialitäten.</h2></div>
+          <p class="section-intro">Frische Auswahl und original türkische Spezialitäten – direkt aus unserem Markt.</p>
+        </div>
+        <div class="product-grid">
+          <figure class="product-card reveal">
+            <img src="images/obst.jpg" alt="Frische Zitrusfrüchte und weiteres Obst in der Marktauslage" loading="lazy" />
+            <figcaption>Frisches Obst</figcaption>
+          </figure>
+          <figure class="product-card reveal">
+            <img src="images/gem%C3%BCse.jpg" alt="Auswahl an frischem Gemüse in der Marktauslage" loading="lazy" />
+            <figcaption>Saisonales Gemüse</figcaption>
+          </figure>
+          <figure class="product-card reveal">
+            <img src="images/fleisch.jpg" alt="Frische Fleischstücke in der Metzgerei-Auslage" loading="lazy" />
+            <figcaption>Halal-Fleisch aus der Metzgerei</figcaption>
+          </figure>
+          <figure class="product-card reveal">
+            <img src="images/dips.jpg" alt="Auswahl an frisch zubereiteten Dips und Feinkostsalaten" loading="lazy" />
+            <figcaption>Frisch zubereitete Dips</figcaption>
+          </figure>
+          <figure class="product-card reveal">
+            <img src="images/dips2.jpg" alt="Frischkäse und würzige Feinkost in der Theke" loading="lazy" />
+            <figcaption>Frischkäse und Antipasti</figcaption>
+          </figure>
+          <figure class="product-card reveal">
+            <img src="images/baklava.jpg" alt="Türkisches Baklava als süße Spezialität" loading="lazy" />
+            <figcaption>Türkisches Baklava</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="service-band wrap" id="dhl" aria-labelledby="dhl-title">
+        <div class="service-panel reveal">
+          <div>
+            <p class="eyebrow">Praktisch im Viertel</p>
+            <h2 id="dhl-title">DHL Paketshop vor Ort.</h2>
+            <p>Erledigen Sie Ihren Einkauf und nutzen Sie zugleich den DHL Paketshop mit integrierter Packstation direkt bei Feinkost Cayan.</p>
+          </div>
+          <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7.5 12 3l9 4.5v9L12 21l-9-4.5v-9Z"/><path d="m3.5 7.8 8.5 4.4 8.5-4.4M12 12.2V21M7.5 5.2l9 4.6"/></svg></span>
+        </div>
+      </section>
+
+      <section class="visit-section" id="besuch" aria-labelledby="visit-title">
+        <div class="visit-layout wrap">
+          <div class="reveal">
+            <p class="eyebrow">Gut zu wissen</p><h2 id="visit-title">Schauen Sie vorbei.</h2>
+            <p class="section-intro visit-intro">Wir freuen uns auf Ihren Besuch in Düsseldorf-Oberkassel.</p>
+            <div class="visit-details">
+              <div class="detail-block">
+                <h3>Öffnungszeiten</h3>
+                <table class="hours-table"><tbody>
+                  <tr><th scope="row">Montag – Samstag</th><td>08:00 – 20:00</td></tr>
+                  <tr><th scope="row">Sonntag</th><td class="closed">Geschlossen</td></tr>
+                </tbody></table>
+              </div>
+              <div class="detail-block">
+                <h3>Adresse</h3>
+                <a class="address-link" href="https://www.google.com/maps/dir/?api=1&amp;destination=Belsenstra%C3%9Fe%2016%2C%2040545%20D%C3%BCsseldorf" target="_blank" rel="noopener noreferrer">Belsenstraße 16<br />40545 Düsseldorf-Oberkassel</a>
+                <div class="phone-links">
+                  <span>Telefon für Rückfragen</span>
+                  <a href="tel:+4921141661520">+49 211 41661520</a>
+                  <a href="tel:+49211574460">+49 211 574460</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="map-card reveal" role="group" aria-label="Standort Feinkost Cayan in Düsseldorf-Oberkassel">
+            <img src="images/map-cayan.jpg" alt="Karte mit der markierten Lage von Feinkost Cayan bei Belsenplatz" loading="lazy" />
+            <div class="map-info">
+              <strong>Feinkost Cayan</strong>
+              <p>Belsenstraße 16 · 40545 Düsseldorf</p>
+              <a class="map-link" href="https://www.google.com/maps/dir/?api=1&amp;destination=Belsenstra%C3%9Fe%2016%2C%2040545%20D%C3%BCsseldorf" target="_blank" rel="noopener noreferrer">Route in Google Maps öffnen<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10" /></svg></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-band" aria-labelledby="contact-title">
+        <div class="contact-inner wrap reveal">
+          <div><p class="eyebrow">Mitten in Oberkassel</p><h2 id="contact-title">Wir freuen uns auf Ihren Besuch.</h2></div>
+          <div class="contact-visit">
+            <p>Belsenstraße 16 · 40545 Düsseldorf</p>
+            <a class="button" href="https://www.google.com/maps/dir/?api=1&amp;destination=Belsenstra%C3%9Fe%2016%2C%2040545%20D%C3%BCsseldorf" target="_blank" rel="noopener noreferrer">Wegbeschreibung öffnen</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner wrap">
+        <p>© <span id="year">2026</span> Feinkost Cayan · Düsseldorf-Oberkassel</p>
+        <p>Belsenstraße 16 · 40545 Düsseldorf</p>
+        <nav class="footer-links" aria-label="Rechtliches">
+          <a href="/impressum/">Impressum</a>
+          <a href="/datenschutz/">Datenschutz</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script>
+      const header = document.querySelector(".site-header");
+      const menuButton = document.querySelector(".menu-toggle");
+      const navigation = document.querySelector(".main-nav");
+      document.querySelector("#year").textContent = new Date().getFullYear();
+
+      const updateHeader = () => header.classList.toggle("is-scrolled", window.scrollY > 12);
+      updateHeader();
+      window.addEventListener("scroll", updateHeader, { passive: true });
+
+      menuButton.addEventListener("click", () => {
+        const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+        menuButton.setAttribute("aria-expanded", String(!isOpen));
+        menuButton.setAttribute("aria-label", isOpen ? "Menü öffnen" : "Menü schließen");
+        navigation.classList.toggle("is-open", !isOpen);
+      });
+
+      navigation.addEventListener("click", (event) => {
+        if (event.target.closest("a")) {
+          menuButton.setAttribute("aria-expanded", "false");
+          menuButton.setAttribute("aria-label", "Menü öffnen");
+          navigation.classList.remove("is-open");
+        }
+      });
+
+      if ("IntersectionObserver" in window) {
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12 });
+        document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
+      } else {
+        document.querySelectorAll(".reveal").forEach((element) => element.classList.add("is-visible"));
+      }
+    </script>
+  </body>
+</html>
